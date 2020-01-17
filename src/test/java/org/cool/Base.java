@@ -87,7 +87,8 @@ public class Base {
 
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
-		takeScreenshot(driver, "");
+		takeScreenshot(driver,
+				"C:\\Users\\GIRI\\Desktop\\selenium\\eclipse-workspace\\Blue\\ScreenShot\\successful10.jpeg");
 
 	}
 	// search product ends
@@ -117,6 +118,26 @@ public class Base {
 				"C:\\Users\\GIRI\\Desktop\\selenium\\eclipse-workspace\\Blue\\ScreenShot\\successfuladdcart.jpeg");
 
 	}
-	// checkout module ends
 
+	// checkout module ends
+	public static void main(String[] args) throws IOException, InterruptedException, AWTException {
+		WebDriver driver = launchBrowser();
+
+		driver.manage().window().maximize();
+
+		String URL = "https://www.coolblue.nl/en";
+
+		navigateTo(driver, URL);
+
+		// Thread.sleep(5000);
+
+		login(driver);
+
+		searchProduct(driver);
+
+		addToCart(driver);
+
+		checkout(driver);
+
+	}
 }
